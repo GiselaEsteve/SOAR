@@ -42,11 +42,10 @@ public class Responder {
             logger.info("Incident " + incident.getId() + " mitigat.");
             return new ExecutionResult(true, "Totes les accions executades correctament.", failed);
         } else {
-            // si falla alguna, ho escalam (segons el vostre flux: demanar revisió humana)
+            // si falla alguna, ho escalam (demanar revisió humana)
             incident.escalate();
             logger.warn("Incident " + incident.getId() + " escalat per falles en accions.");
             return new ExecutionResult(false, "Algunes accions han fallat. Incident escalat.", failed);
         }
     }
 }
-

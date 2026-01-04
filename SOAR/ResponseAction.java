@@ -15,6 +15,6 @@ public abstract class ResponseAction {
 
     @Override
     public String toString() {
-        return "ResponseAction{name='" + name + "'}";
+        return "ResponseAction {name='" + name + "'}";
     }
 }

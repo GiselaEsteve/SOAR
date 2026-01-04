@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 
 public class ExecutionResult {
@@ -10,7 +11,7 @@ public class ExecutionResult {
     public ExecutionResult(boolean success, String message, List<String> failedActions) {
         this.success = success;
         this.message = Objects.requireNonNullElse(message, "");
-        this.failedActions = (failedActions == null) ? new ArrayList<>(null) : new ArrayList<>(failedActions);
+        this.failedActions = (failedActions == null) ? new ArrayList<>() : new ArrayList<>(failedActions);
     }
 
     public boolean isSuccess() {

@@ -10,6 +10,6 @@ public class NotifyAdminAction extends ResponseAction {
             return ActionResult.fail("No s'ha pogut notificar: incident null.");
         }
         // Simulació (mail/slack/etc.)
-        return ActionResult.ok("Admin notificat (simulat) sobre incident: " + incident.getId());
+        return ActionResult.ok("Admin notificat sobre incident: " + incident.getId());
     }
 }

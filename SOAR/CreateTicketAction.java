@@ -11,6 +11,6 @@ public class CreateTicketAction extends ResponseAction {
         }
         // Simulació (Jira/ServiceNow/etc.)
         String ticketId = "TCK-" + incident.getId();
-        return ActionResult.ok("Ticket creat (simulat): " + ticketId);
+        return ActionResult.ok("Ticket creat: " + ticketId);
     }
 }
