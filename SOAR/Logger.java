@@ -3,7 +3,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Logger {
 
-    private static final DateTimeFormatter FMT = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    private static final DateTimeFormatter FMT = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
     public void info(String message) {
         System.out.println(format("INFO", message));

@@ -10,7 +10,7 @@ public class BlockIPAction extends ResponseAction {
             return ActionResult.fail("No s'ha pogut bloquejar la IP: incident o IP invàlida.");
         }
         // Simulació (no toca firewall real)
-        return ActionResult.ok("IP bloquejada (simulat): " + incident.getSourceIP());
+        return ActionResult.ok("IP bloquejada: " + incident.getSourceIP());
     }
 }
 

@@ -1,4 +1,3 @@
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,6 +27,8 @@ public class Incident {
         this.updatedAt = this.createdAt;
     }
 
+    //Getters i setters
+
     public String getId() {
         return id;
     }
@@ -44,7 +45,7 @@ public class Incident {
         return severity;
     }
 
-        public LocalDateTime getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
@@ -68,7 +69,37 @@ public class Incident {
         return Collections.unmodifiableList(actions);
     }
 
-        //FALTAN ---- Mètodes del diagrama ----
+    public void setState(IncidentState state) {
+        this.state = state;
+    }
 
-    
+    public void setType(IncidentType type) {
+        this.type = type;
+    }
+
+    public void setSeverity(Severity severity) {
+        this.severity = severity;
+    }
+
+    public void addEvent(SecurityEvent event) {
+        events.add(event);
+    }
+
+    public void addAction(ResponseAction action) {
+        actions.add(action);
+    }
+
+    public void close() {
+        this.state = IncidentState.TANCAT;
+    }
+
+    public void mitigated() {
+        this.state = IncidentState.MITIGAT;
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    public void escalate() {
+        this.state = IncidentState.ESCALAT;
+        this.updatedAt = LocalDateTime.now();
+    }
 }
